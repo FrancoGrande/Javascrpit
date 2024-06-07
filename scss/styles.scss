@@ -1,0 +1,564 @@
+@import "_variables";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+} 
+
+html{
+  min-height: 100vh;
+}
+body{
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: calc($hsmall*1.04);
+  font-family: "Patua One", serif;
+  font-weight: 400 ;
+   color: #019C9E;
+}
+
+h4{
+  font-family: "Patua One", serif;
+  font-weight: 400 ;
+   color: #EF476F;
+}
+
+h1{
+  font-size: $hlarge;
+  color: #019C9E;
+
+}
+
+
+p{
+  font-size: $plarge;
+  font-family: "Rubik", sans-serif;
+}
+/* -------------Navegacion------------- */
+
+.navbar{
+    background-color: $background2 !important;
+    grid-area:navbar;
+
+        .navbar-nav{
+            color: #fff; 
+
+            .nav-link{
+                color: #fff;
+            }
+
+            .nav-link:hover{
+                color: #7df6f8;
+              }
+        }
+
+        .navbar-brand{
+            color: #fff;
+          }
+
+          .navbar-brand:hover{
+            color: #7df6f8;
+          }
+  }
+
+  /* --------- Fin navegacion------------------ */
+
+/* ----------index----------------------- */
+
+  .row{
+    padding: 0px 20px;
+  }
+
+  .titulo-juegosdemesa{
+    padding-left: 20px;
+    padding-top: 40px;
+  }
+
+
+  /* ---------sobre nosotros------------- */
+
+
+  .articulo1{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    
+    .portada-texto{
+        width: 100%;
+        padding: px;
+      }
+
+      img{
+        object-fit: cover;
+        height: 100vh;
+      }
+  }
+
+  .info2{
+    padding: 60px 20px;
+  }
+
+  .articulo2{
+    display: grid;
+    grid-template-columns: auto 2fr;
+
+    .texto-articulo2{
+        width: 100%;
+        padding: 50px;
+      }
+
+      img{
+        object-fit: cover;
+        width: 700px;
+        height: 700px;
+        padding-bottom: 40px;
+      }
+  }
+
+  /* ----------------fin sobre nosotros-------------- */
+
+  /* ----------------Video Index--------------------- */
+
+
+  .videito{
+    position: relative;
+    display: grid;
+    grid-template-columns: 800px auto;
+    border-bottom: #ff3967 solid;
+    border-top: #ff3967 solid;;
+    background-color: #ff3967;
+    
+
+    .texto-video{
+        position: relative;
+        max-width: 100%;
+        padding: 20px;
+        color: #fff;
+      }
+
+      .video{
+        width: 800px;
+        height: 450px;
+      }
+
+      .texto-video{
+
+        p{
+            font-size: $pmedium;
+          }
+
+          button{
+            font-size: $pmedium;
+            position: absolute;
+            left: 20px;
+            bottom: 50px;
+            outline: none;
+            cursor: pointer;
+            border: none;
+            padding: 0.9rem 2rem;
+            margin: 0;
+            display: inline-block;
+            letter-spacing: 0.1rem;
+            font-weight: 700;
+            font-size: 17px;
+            overflow: hidden;
+            background: #019C9E;
+            color:#ffff;
+            border-radius: 5px;
+            
+
+            span {
+              position: relative;
+              z-index: 10;
+              transition: color 0.4s;
+              color: #fff;
+              
+             }
+
+            
+            } 
+          
+
+          button:hover {
+
+            span {
+              color: #fff;
+             }
+           }
+
+          button::before,
+          button::after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          }
+
+          button::before {
+            content: "";
+            background: #f67996;
+            width: 120%;
+            left: -10%;
+            transform: skew(30deg);
+            transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+
+           }
+
+           button:hover::before {
+            transform: translate3d(100%, 0, 0);
+           }
+        }
+      }
+  
+
+  /* ---------------fin video index-------------- */
+
+  /* ---------------lista de juegos 1--------------- */
+
+  .card-producto {
+    display: flex;
+    gap: 40px;
+    margin: 10px;
+    overflow-x: hidden ; 
+    padding-top: 40px;
+
+    .card2 {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 500px;
+      height: 350px;
+      margin-bottom: 25px;
+      border: 2px solid #EF476F;
+      border-radius: 20px;
+      background-color: #FCFCFC;
+      box-shadow: 0 1px 8px;
+      transition: 0.7s;
+      overflow: hidden;
+
+      img {
+          border-top-right-radius: 17px;
+          border-top-left-radius: 17px;
+          height: 70%;
+          object-fit: cover;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 20px;
+            width: fit-content;
+            white-space: wrap;
+          }
+
+        
+      }
+
+      .card2:hover {
+        background-color: #EF476F;
+        box-shadow: 0 1px 20px;
+        z-index: 100px;
+            
+          h2{
+            color: #7df6f8;
+          }
+
+        }
+
+      }
+  
+  /* -------------Galeria----------------- */
+
+  .texto-galeria{
+    padding: 20px;
+  }
+
+  .galeria-conteiner{
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    padding: 20px;
+    grid-template-areas: 
+    "cthulhu cthulhu catan taco "
+    "censj dados dados gaia "
+    "censj gaia2 gaia2 hdp "
+    "random2 melomano reino reino "
+    "random2 random1 random1 monopoly ";
+
+    .cthulhu{
+        border:$bordeg;
+        grid-area: cthulhu;
+      }
+      
+      .catan{
+        border:$bordeg;
+        grid-area: catan;
+      
+      }
+
+      .censj{
+        border:$bordeg;
+        grid-area: censj;
+      }
+
+      .dados{
+        border:$bordeg;
+        grid-area: dados;
+      }
+
+      .dyd{
+        border:$bordeg;
+        grid-area: dados;
+      }
+
+      .gaia{
+        border:$bordeg;
+        grid-area: gaia;
+      }
+
+      .gaia2{
+        border:$bordeg;
+        grid-area: gaia2;
+      }
+
+      .hdp{
+        border:$bordeg;
+        grid-area: hdp;
+      }
+
+      .random2{
+        border:$bordeg;
+        grid-area: random2;
+      }
+
+      .melomano{
+        border:$bordeg;
+        grid-area: melomano;
+      }
+
+      .reino{
+        border:$bordeg;
+        grid-area: reino;
+      }
+
+      .random1{
+        border:$bordeg;
+        grid-area: random1;
+      }
+
+      .monopoly{
+        border:$bordeg;
+        grid-area: monopoly;
+      }
+
+      .taco{
+        border:$bordeg;
+        grid-area: taco;
+      }
+  }
+
+  .imagenes{
+
+    img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+  }
+
+  /* -----------catalogo------------------ */
+
+  .catalogo{
+    display: grid;
+    grid-template-columns:20% 80% ;
+    grid-template-rows: 5% 90% 5%;
+    grid-template-areas: 
+    "header header"
+    "formulario juegos"
+    "footer footer";
+  }
+
+  .products{
+    grid-area: juegos;
+    padding-top: 50px;
+    
+    h1{
+      padding-left: 20px;
+    }
+  }
+
+  header{
+    grid-area: header;
+  }
+
+  #lista-form{
+    padding: 30px 20px;
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        gap:5px
+      }
+  }
+
+  /* ----------------------contacto------------------------------ */
+
+  .contacto-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 5% 90% 5%;
+    grid-template-areas:
+    "header header"
+    "contacto form"
+    "footer footer";
+  }
+
+  .form-contacto{
+    grid-area: form;
+    padding: 20px;
+
+    p{
+  padding-top: 14px;
+}
+  }
+
+  .contacto-texto {
+    grid-area: contacto;
+    padding: 40px 20px;
+
+
+    p{
+        padding-top: 14px;
+      }
+  }
+
+  .form-contacto {
+    display: grid;
+    grid-template-columns: 100%;
+  
+  }
+
+  form{
+    .formulario{
+      display: grid;
+      padding-bottom: 40px;
+      padding-top: 20px;
+         
+
+        label {
+            font-size: 18px;
+            color: #000;
+          }
+
+          input {
+            color: #989898;
+            background-color: none;
+            border: solid 1px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            padding: 14px;
+            font-size: 16px;
+            padding-right: 600px;
+          }
+
+          input:focus {
+            border: solid 2px #354B9A;
+            outline: none;
+          }
+      }
+
+      .formulario-mensaje{
+        padding-bottom: 40px;
+        display: grid;
+
+        label {
+            font-size: 18px;
+            color: #000;
+          }
+
+          input {
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 100px;
+            padding-right: 600px;
+            color: #989898;
+            background-color: none;
+            border: solid 1px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            font-size: 16px;
+          }
+
+          input:focus {
+            border: solid 2px #354B9A;
+            outline: none;
+          }
+      }
+  }
+
+  .boton-contacto{
+    width: 80px;
+    height: 40px;
+  }
+
+  /* -------------footer-------------------- */
+
+  .footer-conteiner {
+    display: flex;
+    background-color: $background2;
+    justify-content: space-between;
+    align-items: center;
+    height: calc($size2*1.34);
+    grid-area: footer;
+
+    .info-footer {
+        margin-left: 20px;
+
+        a {
+            font-size: 1.2rem;
+            color: #fff;
+          }
+      }
+      
+      .redes{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        label {
+            color: #fff;
+            letter-spacing: 1px;
+          }
+
+          .iconos-redes {
+            display: flex;
+            flex-direction: row;
+          }
+
+          .iconos-redes{
+
+            .bxl-instagram-alt {
+                font-size: 44px;
+                color: #fff;
+              }
+
+              .bxl-facebook-circle {
+                font-size: 44px;
+                color: #fff;
+              }
+          }
+      }
+  }
+
+
+
+  /* -------------------fin footer------------------- */
+
+
+  @import "_condicionales";
+  @import "_queries";

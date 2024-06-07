@@ -1,0 +1,31 @@
+
+/* ---------color navbar--------- */
+
+$navbar: web;
+
+.footer-conteiner{
+
+    @if $navbar==mobile {
+        background-color: $background1 !important;
+        
+    }
+
+    @else if $navbar==web {
+        
+        background-color: $background2;
+    }
+}
+
+.navbar {
+
+    @if $navbar==mobile {
+        background-color: $background1 !important;
+        
+    }
+
+    @else if $navbar==web {
+        
+        background-color: $background2 !important;
+    }
+
+}

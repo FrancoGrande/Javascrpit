@@ -1,0 +1,559 @@
+@import "_variables";
+
+/* ------------responsive---------------- */
+
+@media  (max-width: 1200px) {
+
+  .articulo1{
+    display: block;
+   
+    
+    .portada-texto{
+        width: 100%;
+        padding: 50px;
+
+        h1{
+          font-size: $hregular;
+        }
+
+        p{
+          font-size: $pmedium;
+        }
+      }
+
+      img{
+        object-fit: cover;
+        height: 10%;
+        width: $var1;
+      }
+  }
+
+.info2{
+  padding: 20px 20px;
+
+  h1{
+    font-size: $hregular;
+  }
+
+  p{
+    font-size: $pmedium;
+  }
+
+}
+
+  .articulo2{
+    display: block;
+ 
+
+    .texto-articulo2{
+        width: 100%;
+        padding: 50px;
+      }
+
+      img{
+        object-fit: cover;
+        width: 100%;
+        height: 700px;
+      }
+  }
+
+
+    .videito{
+        position: relative;
+        display: block;
+        height: 800px;
+
+        .texto-video{
+
+            button{
+                font-size: 20px;
+                position: absolute;
+                left: 40px;
+                bottom: -50px;
+              }
+        }
+
+        .video{
+            position: relative;
+            width: 100%;
+           }
+      }
+}
+
+
+@media (max-width: 1100px){
+
+/* --------checkbox catalogo--------- */
+.form-catalogo{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+    
+  .catalogo{
+    display: block;
+  }
+
+  .card-producto{
+
+    .card2{
+      height: 300px;
+      
+      img{
+        width: 400px;
+        height: 200px;
+      }
+    }
+  }
+}
+
+/* --------fin checkbox catalogo--------- */
+
+@media (max-width: 992px) {
+ 
+  
+    h1{
+        font-size: 35px;
+      }
+    
+      p{
+        font-size: $pmedium;
+      }
+
+
+/* --------video/index------- */
+
+.videito{
+    position: relative;
+    display: block;
+    height: 700px;
+
+    .texto-video{
+      p{
+        font-size: $psmall;
+      }
+        button{
+            font-size: 20px;
+            position: absolute;
+            left: 40px;
+            bottom: -50px;
+          }
+    }
+  }
+
+  /* --------fin video/index------ */
+
+  /* ---------cards---------------- */
+
+  .card-producto {
+    display: flex;
+    width: auto;
+    height: auto;
+    overflow-y: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 10px;
+    padding-top: 40px;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+      .card2 {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        width: 350px;
+        height: 300px;
+        margin-bottom: 25px;
+        border: 2px solid #EF476F;
+        border-radius: 20px;
+        background-color: #FCFCFC;
+        box-shadow: 0 1px 8px;
+        transition: 0.7s;
+        
+
+        h2 {
+            font: size 30px;
+            justify-self: center;
+            width: fit-content;
+            height: 20px;
+            font-weight: bold;
+            align-self: center;
+          }
+
+
+          img {
+            border-top-right-radius: 17px;
+            border-top-left-radius: 17px;
+            overflow: hidden;
+            object-fit: cover;
+            width: auto;  
+
+          }
+      }
+
+      .card2:hover {
+        background-color: #EF476F;
+        box-shadow: 0 1px 20px;
+        z-index: 100px;
+            
+          h2{
+            color: #7df6f8;
+          }
+        }
+  }
+/* ----------- fin cards---------------- */
+
+/* ------------sobre nosotros----------- */
+
+.articulo1{
+  display: block;
+ 
+  
+  .portada-texto{
+      width: 100%;
+      padding: 20px;
+
+      h1{
+        font-size: $hregular;
+      }
+
+      p{
+        font-size: $psmall;
+      }
+    }
+
+    img{
+      object-fit: cover;
+      height:400px;
+      width: $var1;
+    }
+}
+
+.info2{
+padding: 20px 20px;
+
+h1{
+  font-size: $hsmall;
+}
+
+p{
+  font-size: $psmall;
+}
+
+}
+
+.articulo2{
+  display: block;
+
+
+  .texto-articulo2{
+      width: 100%;
+      padding: 20px;
+
+      h1{
+        font-size: $hsmall;
+      }
+      
+      p{
+        font-size: $psmall;
+      }
+    }
+
+    img{
+      object-fit: cover;
+      width: 100%;
+      height:400px;
+    }
+}
+
+/* -----------fin sobre nosotros -------   */
+
+/* ------------checkbox catalogo-------- */
+
+#lista-form {
+
+  .form-catalogo{
+
+      h4{
+
+        font-size: 1rem;
+      }
+
+      label{
+
+       font-size: 0.7rem;
+      }
+    }
+  }
+
+  /* -----------fin checkbox catalogo--------- */
+
+  .footer-conteiner {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+
+    .info-footer {
+      display: none;
+
+    }
+
+    .redes {
+      width: 100%;
+      margin-left: 20px;
+      justify-content: space-between;
+
+      label {
+        font-size: $pxsmall;
+      }
+
+      .iconos-redes {
+        display: flex;
+        flex-direction: row;
+        
+        .bxl-instagram-alt {
+          font-size: 24px;
+        }
+
+        .bxl-facebook-circle {
+          font-size: 24px;
+        }
+
+        
+      }
+    }
+  }
+  
+  /* ------------fin footer---------------- */
+  .contacto-grid{
+    display: block;
+
+    .contacto-contenedor {
+      display: block;
+  
+      .contacto-texto {
+        width: 70%;
+        margin-right: 40px;
+  
+        p {
+          font-size: 20px;
+          color: #105698;
+          font-size: 32px;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  
+
+  form{
+
+    .formulario{
+        padding-bottom: 20px;
+         padding-top: 20px;
+
+         input{
+          padding-right: 300px;
+         }
+      }
+      .formulario-mensaje{
+          
+        input{
+          padding-right: 385px;
+         }
+       }
+  }
+}
+}
+
+@media (max-width: 800px){
+
+  .row{
+    padding-left: 20px;
+    h1{
+      font-size: $hsmall;
+    }
+
+    p{
+      font-size: $psmall;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+
+  h1{
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
+  
+  h2{
+    font-size: 20px;
+  }
+  
+  p{
+    font-size: $psmall;
+  }
+
+  /* ------------video/index-------------- */
+
+  .videito{
+    display: block;
+    height: 760px;
+
+    .texto-video{
+
+      button{
+        font-weight: 400;
+        padding: 2px 8px;
+        left: 20px;
+        
+        span{
+          font-size: $psmall;
+          bottom: 4px;
+        }
+      }
+    }
+      
+    .video{
+      position: relative;
+      width: 100%;
+     }
+  }
+  /* ----------fin video/index----------- */
+
+
+  /* -------------sobre nosotros----------- */
+
+.articulo1{
+  display: block;
+  
+  
+  .portada-texto{
+      width: 100%;
+      padding: 20px;
+
+      h1{
+        font-size: 25px;
+      }
+
+      p{
+        font-size: $pxsmall;
+      }
+    }
+
+    img{
+      object-fit: cover;
+      height:200px;
+      width: $var1;
+    }
+}
+
+.info2{
+padding: 20px 20px;
+
+
+
+p{
+  font-size: $pxsmall;
+}
+
+}
+
+.articulo2{
+  display: block;
+
+
+  .texto-articulo2{
+      width: 100%;
+      padding: 20px;
+
+      
+      
+      p{
+        font-size: $pxsmall;
+      }
+    }
+
+    img{
+      object-fit: cover;
+      width: 100%;
+      height:200px;
+    }
+}
+
+
+
+/* ----------fin sobre nosotros----------- */
+
+  /* --------checkbox/catalogo----------- */
+
+  .form-catalogo{
+    display: block;
+  }
+
+  #lista-form{
+
+    form{
+      padding: 10px;
+    }
+  }
+/* --------fin checkbox/catalogo---------- */
+
+/* --------contacto----------------------- */
+.contacto-grid{
+
+  form{
+
+    .formulario{
+        padding-bottom: 20px;
+         padding-top: 20px;
+
+         input{
+          padding-right: 100px;
+         }
+      }
+    .formulario-mensaje{
+        
+      input{
+        padding-right: 185px;
+       }
+     }
+  }
+}
+/* --------galeria----------------------- */
+
+  .texto-galeria{
+   h1{
+      font-size: $hsmall;
+
+
+    }
+  }
+
+}
+
+@media(max-width:360px){
+
+  .contacto-grid{
+
+    form{
+    
+      .formulario{
+          padding-bottom: 20px;
+           padding-top: 20px;
+    
+           input{
+            padding-right: 00px;
+           }
+        }
+        .formulario-mensaje{
+            
+          input{
+            padding-right: 0px;
+           }
+        }
+    }
+  }
+}
