@@ -33,7 +33,7 @@ const solicitarCantidad = () => {
 //busqueda por nombre --------------------------------------------------------------------------------
 const buscarProducto = () => {
     let entradaUsuario = prompt("Lista de productos: \nColonos de catan \nReino Dragon \nHdp \nAtenea \nDigalo con memes \nIngresar nombre del producto:");
-    let entradaLowerCase = entradaUsuario.toLowerCase(); // buscar en minusculas
+    let entradaLowerCase = entradaUsuario.toLowerCase();
     let productoEncontrado = productos.find(producto => producto.producto.toLocaleLowerCase() === entradaLowerCase);
 
     if (productoEncontrado) {
@@ -47,7 +47,7 @@ const buscarProducto = () => {
                 mensajeEtiqueta += `\nNombre: ${producto.producto}\nPrecio: ${producto.precio}\nCategoría: ${producto.categoria}\n`;
             });
             alert(mensajeEtiqueta);
-            return productoEtiqueta[0]; // Devuelve el primer producto encontrado por etiqueta
+            return productoEtiqueta[0];
         } else {
             alert('Lo siento, no encontramos lo que buscabas.');
             return null;
