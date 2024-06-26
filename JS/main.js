@@ -1,85 +1,136 @@
-//-------------------------------------------------------------
-let carrito = [];
-let producto = "";
-let precio = 0;
-let cantidadProducto = 0;
-let continuarCompra = false;
-let precioTotal = 0;
-let descuento = 0;
-let TotalPagar = 0;
-agregarOtro =true;
 
-//array con los productos----------------------------------------------------------------------------------
-const productos = [ 
-    {producto:'Colonos de catan',precio: 80000, categoria: 'juego de mesa', stock: true, etiqueta:['colonos', 'catan', 'estrategia', 'comercio',]},
-    {producto:'Reino Dragon',precio: 42000, categoria: 'juego de mesa', stock: true, etiqueta:['reino', 'amigos', 'dragon', 'heroes', 'dragon']},
-    {producto:'Atenea',precio: 46000, categoria: 'juego de mesa', stock: true, etiqueta:'atenea'},
-    {producto:'Hdp',precio: 35000, categoria: 'cartas', stock: true, etiqueta:['humor', 'cartas', 'hdp']},
-    {producto:'Digalo con memes',precio: 25000, categoria: 'cartas', stock: true, etiqueta:['memes', 'digalo'] }
+let botonesAñadir =document.querySelector(".boton-agregar");// boton para agregar elemento al carrito
+const productosLista = document.querySelector("#productos-Conteiner"); // contenedor donde se va a cargar la lista de productos
+const numeroCarrito = document.querySelector(".carrito-cantidad");
+const carrito= [];
+
+
+const productos = [ //lista de productos en un array
+    {id: 1,
+    nombre:'Catan',
+    imagen: "assets/catan.jpg",
+    precio: 80000,
+    categoria: 'juego de mesa',
+    stock: true,
+    cantidad:1,
+    etiqueta:['catan', 'estrategia', 'comercio',]},
+    
+    {id: 2,
+    nombre:'Reino Dragon',
+    imagen: "assets/reino dragon.jpg",
+    precio: 42000,
+    categoria: 'juego de mesa',
+    stock: true,
+    etiqueta:['reino', 'amigos', 'dragon', 'heroes']},
+    
+    {id: 3,
+    nombre:'Atenea',
+    imagen: "assets/atenea.jpg",
+    precio: 46000,
+    categoria: 'juego de mesa',
+    stock: true,
+    etiqueta:'atenea'},
+
+    {id: 4,
+    nombre:'saboteour',
+    imagen: "assets/saboteour.jpg",
+    precio: 35000,
+    categoria: 'cartas',
+    stock: 2,
+    etiqueta:['humor', 'cartas']},
+
+    {id: 5,
+    nombre:'Remando en dulce de leche',
+    imagen: "assets/remando en dulce de leche.jpg",
+    precio: 31000,
+    categoria: 'cartas',
+    stock: true,
+    etiqueta:['humor', 'cartas']},
+
+    {id: 6,
+    nombre:'Call of Cthulhu',
+    imagen: "assets/call of cthulhu.jpg",
+    precio: 89000,
+    categoria: 'cartas',
+    stock: true,
+    etiqueta:['asdasd']},
+
+    {id: 7,
+    nombre:'Osito',
+    imagen: "assets/osito.jpg",
+    precio: 35000,
+    categoria: 'muñecos', 
+    stock: true, 
+    etiqueta:['niños']},
+
+    {id: 8,
+    nombre:'Princesa',
+    imagen: "assets/princesa.jpg",
+    precio: 40000, 
+    categoria: 'muñecos', 
+    stock: true, 
+    etiqueta:['niños']},
 ]
 
-// cantidad del producto----------------------------------------------------------------------------------
-const solicitarCantidad = () => {    
-    let cantidadProducto =  parseInt(prompt("ingresar cuantos productos vas a llevar:"))
 
-// indicando que no puede estar el campo vacio ni puede ser menor o igual a 0
-    while (isNaN(cantidadProducto) || cantidadProducto <= 0) {
-        alert('por favor, ingresar un numero valido');
-        cantidadProducto = parseInt(prompt("Ingresar cuantos productos vas a llevar:"));
-    }
-    return cantidadProducto
+
+let carritoProductos;// donde se va a contener los elementos agregados al carrito
+let productosLocal = localStorage.getItem("carrito-cargado");
+
+if(productosLocal) {
+    carritoProductos= JSON.parse(productosLocal);
+    actualizarNumeroCart()
+} else {
+    carritoProductos=[];
 }
 
-//busqueda por nombre --------------------------------------------------------------------------------
-const buscarProducto = () => {
-    let entradaUsuario = prompt("Lista de productos: \nColonos de catan \nReino Dragon \nHdp \nAtenea \nDigalo con memes \nIngresar nombre del producto:");
-    let entradaLowerCase = entradaUsuario.toLowerCase();
-    let productoEncontrado = productos.find(producto => producto.producto.toLocaleLowerCase() === entradaLowerCase);
+function mostrarProdcutos(productos) {
+    productosLista.innerHTML= "";
+    productos.forEach(element => {
+        const div =document.createElement('div');
+        div.classList.add('card2');
+        div.innerHTML= `
+            <img class="imgclass" src="${element.imagen}">
+            <h2>${element.nombre}</h2> 
+            <p>$ ${element.precio}</p>
+            <button class="boton-agregar" id="${element.id}">agregar a carrito</button>     
+        `;
+        productosLista.append(div)
+    });
+    botonAgregarAsignado()
+}
 
-    if (productoEncontrado) {
-        alert(`Nombre: ${productoEncontrado.producto}\nPrecio: ${productoEncontrado.precio}\nCategoría: ${productoEncontrado.categoria}`);
-        return productoEncontrado;
-    } else {
-        let productoEtiqueta = productos.filter(producto => producto.etiqueta.includes(entradaLowerCase));
-        if (productoEtiqueta.length > 0) {
-            let mensajeEtiqueta = 'Productos encontrados: \n';
-            productoEtiqueta.forEach(producto => {
-                mensajeEtiqueta += `\nNombre: ${producto.producto}\nPrecio: ${producto.precio}\nCategoría: ${producto.categoria}\n`;
-            });
-            alert(mensajeEtiqueta);
-            return productoEtiqueta[0];
-        } else {
-            alert('Lo siento, no encontramos lo que buscabas.');
-            return null;
-        }
-    }
+
+mostrarProdcutos(productos);
+
+function botonAgregarAsignado() {
+    botonesAñadir =document.querySelectorAll('.boton-agregar')
+    botonesAñadir.forEach(boton => {
+        boton.addEventListener('click', (agregarCarrito))
+    });
 };
 
 
 
 
-let mensajeBienvenida = alert('Bienvenidos a Jugar, la jugueteria mas jugueteria del mundo. a continuacion te mostraremos los juegos que tenemos disponibles');
-
-
-
-do {
-    let productoSeleccionado = buscarProducto()
+function agregarCarrito(e){
+    const idBoton = e.currentTarget.id;
+    const productoAgregar= productos.find(producto => producto.id == idBoton);
     
-    if(productoSeleccionado) {
-        let cantidad =solicitarCantidad()
-        carrito.push({producto: productoSeleccionado.producto, precio: productoSeleccionado.precio, cantidad: cantidad})
-        precioTotal += productoSeleccionado.precio * cantidad;
+    if (carritoProductos.some(producto => producto.id == idBoton)){
+        const index= carritoProductos.findIndex(producto => producto.id == idBoton);
+        carritoProductos[index].cantidad++;
+
+    }else {
+        productoAgregar.cantidad= 1;
+        carritoProductos.push(productoAgregar);
+    }
+    actualizarNumeroCart()
+    localStorage.setItem("carrito-cargado",JSON.stringify(carritoProductos));
     }
 
-    continuarCompra =confirm("¿Quieres agregar otro producto?")
-
-} while (continuarCompra);
-
-alert(`El monto total a pagar es: ${precioTotal}`);
-let pagar = confirm("¿Deseas proceder con el pago?");
-
-if (pagar) {
-    alert("¡Felicidades, compra exitosa!");
-} else {
-    alert("¡Vuelva pronto!");
+    function actualizarNumeroCart(){
+    let number = carritoProductos.reduce((acc,producto) => acc + producto.cantidad, 0);
+    numeroCarrito.innerHTML = number;
 }
+

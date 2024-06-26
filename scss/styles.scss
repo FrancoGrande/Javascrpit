@@ -220,8 +220,15 @@ p{
 
   /* ---------------lista de juegos 1--------------- */
 
+  .bx-cart-alt{
+    font-size: 28px;
+    padding-top: 8px;
+    margin-right: 20px;
+  }
+
   .card-producto {
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
     margin: 10px;
     overflow-x: hidden ; 
@@ -230,8 +237,8 @@ p{
     .card2 {
       display: flex;
       flex-direction: column;
-      flex-grow: 1;
-      width: 500px;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      width: 300px;
       height: 350px;
       margin-bottom: 25px;
       border: 2px solid #EF476F;
@@ -241,35 +248,31 @@ p{
       transition: 0.7s;
       overflow: hidden;
 
-      img {
+      .botonCarrito {
+        width: 200px;
+        align-self: center;
+        background-color: #354B9A;
+        color: #FCFCFC;
+      }
+
+      .imgclass {
           border-top-right-radius: 17px;
           border-top-left-radius: 17px;
-          height: 70%;
+          height: 160px;
           object-fit: cover;
         }
 
         h2 {
-            font-size: 24px;
+            font-size: 20px;
             margin: 20px;
             width: fit-content;
             white-space: wrap;
           }
-
-        
-      }
-
-      .card2:hover {
-        background-color: #EF476F;
-        box-shadow: 0 1px 20px;
-        z-index: 100px;
-            
-          h2{
-            color: #7df6f8;
+          p{
+            font-size: 20px;
           }
-
-        }
-
       }
+    }
   
   /* -------------Galeria----------------- */
 
