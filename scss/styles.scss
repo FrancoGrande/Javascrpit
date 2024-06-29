@@ -70,7 +70,7 @@ p{
   transition-duration: 1s;
 }
 .noVisible{
-  visibility: hidden;
+  display: none;
 }
 
 
@@ -413,15 +413,65 @@ p{
     }
   }
 
+
   /* -----------catalogo------------------ */
+
+  .vaciar-total{
+    padding-left:40%;
+    display: flex;
+    gap: 80px;
+    grid-area: compra;
+    padding-top: 60px;
+    padding-bottom: 100px;
+
+    .boton-vaciar {
+      background-color: #EF476F;
+      color: #FCFCFC;
+      padding: 0px 20px;
+      border-radius: 50px;
+    }
+
+    
+    .total-compra{
+      display: flex;
+      list-style: none;
+      border: #EF476F solid;
+      border-radius: 50px;
+      li{
+        padding: 0px 20px;
+        margin-left: 5px;
+        
+      }
+
+      .boton-venta {
+        background-color: #EF476F;
+        color: #FCFCFC;
+        padding: 0px 20px;
+        border-radius: 50px;
+        border-color: #EF476F;
+      }
+
+    }
+
+    .boton-volver{
+        display: flex;
+      .boton-volver__boton{
+        background-color: #EF476F;
+        color: #FCFCFC;
+        padding: 0px 20px;
+        border-radius: 50px;
+      }
+    }
+  }
 
   .catalogo{
     display: grid;
-    grid-template-columns:20% 80% ;
-    grid-template-rows: 5% 90% 5%;
+    // grid-template-columns:20% 80% ;
+    // grid-template-rows: 5% 90% 5%;
     grid-template-areas: 
     "header header"
     "formulario juegos"
+    "compra compra"
     "footer footer";
   }
 

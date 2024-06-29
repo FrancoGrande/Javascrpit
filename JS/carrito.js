@@ -30,9 +30,8 @@ function venta(){
 }
 
 function cargarCarrito(){
-    if(carrito.length > 0){ // controlo que el carrito este creado pero que no tenga elementos a mostrar en la pag carrito
+    if(carrito.length > 0){
         contenedorCarrito.innerHTML = "";
-        carritoVacio.classList.add("noVisible");
         let total =0;
         carrito.forEach(element => {
             const div = document.createElement("div");
@@ -70,11 +69,11 @@ function cargarCarrito(){
         
         
     }
-    else{ //si carrito esta vacio muestro mensajes y oculto elementos
+    else{ 
         contenedorCarrito.innerHTML = "";
         vaciarTotal.classList.add("noVisible");
         totalCompra.classList.add("noVisible");
-        carritoVacio.classList.remove("noVisible");
+        // carritoVacio.classList.remove("noVisible");
     }
     actualizarBotonesEliminar();//actualizo botones añadidos
 }
@@ -96,5 +95,5 @@ function eliminarDeCarrito(e){
         carrito.splice(valor,1);
     }
     cargarCarrito();
-    localStorage.setItem("carrito-cargado",JSON.stringify(carrito));//guardo en el localStorage para volver a cargar despues actualizado
+    localStorage.setItem("carrito-cargado",JSON.stringify(carrito));
 }
