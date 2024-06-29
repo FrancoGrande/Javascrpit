@@ -38,6 +38,42 @@ p{
   font-size: $plarge;
   font-family: "Rubik", sans-serif;
 }
+
+.detalle-compra{
+  margin-top: 60px;
+  margin-right: 100px;
+  padding: 20px;
+  border: #3d3092 solid;
+  border-radius: 10px;
+  list-style: none;
+  
+  .detalle-compra-item{
+    display: flex;
+    gap: 100px;
+    
+    .detalle-producto{
+      
+      .img-carrito{
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
+  }
+  .bxs-trash{
+    font-size: 40px;
+    color: #ff3967;
+  }
+}
+
+.visible{
+  transition-duration: 1s;
+}
+.noVisible{
+  visibility: hidden;
+}
+
+
 /* -------------Navegacion------------- */
 
 .navbar{
@@ -273,6 +309,8 @@ p{
           }
       }
     }
+
+
   
   /* -------------Galeria----------------- */
 

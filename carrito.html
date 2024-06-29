@@ -14,7 +14,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Rubik:ital,wght@0,300..900;1,300..900&family=Signika+Negative:wght@519&display=swap" rel="stylesheet">
         
-        <title>Catalogo</title>
+        <title>carrito</title>
       </head>
       
       <body class="catalogo">
@@ -28,7 +28,7 @@
     </button>
     <div class=" justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="carritolink" href="./carrito.html"><i class='bx bx-cart-alt'><span class="carrito-cantidad">0</span></i></a>
+
         <a class="nav-link" aria-current="page" href="./index.html">Home</a>
         <a class="nav-link" href="./pages/sobre nosotros.html">Sobre Nosotros</a>
         <a class="nav-link" href="./pages/catalogo.html">Catálogo</a>
@@ -42,76 +42,23 @@
 </nav>
 <!-- fin navbar -->
     </header>
-  <!-----------------------inicio filtros------------------------------------>
-  <!-- <div id="lista-form">
-
-      <form class="form-contacto">
-        <label for="busqueda">Buscar:</label>
-        <input type="search" id="busqueda" name="busqueda" placeholder="Estoy buscando...">
-        <button class="btn btn-primary">Buscar</button>
-      </form>
-
-    <div class="form-catalogo">
-      <form>
-        <h4>Filtros por producto</h4>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="productos" name="productos" value="juegos de mesa"> Juegos de mesa
-        </label>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="productos" name="productos" value="juegos de cartas"> Juegos de cartas
-        </label>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="productos" name="productos" value="juguetes"> Juguetes
-        </label>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="productos" name="productos" value="juguetes didacticos"> Juguetes didacticos
-        </label>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="productos" name="productos" value="artesanales"> Artesanales
-        </label>
-      </form>
-
-      <form>
-        <h4>Filtros por genero</h4>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="genero" name="genero" value="ninos"> Niños
-        </label>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="genero" name="genero" value="ninas"> Niñas
-        </label>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="genero" name="genero" value="adultos"> Adultos
-        </label>
-      </form>
-
-      <form>
-        <h4>Edades</h4>
-        <label for="checkboxfiltros">
-          <input type="checkbox"  name="edades" value="edad"> 1 a 5años
-        </label>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="edades" name="edades" value="edad"> 6 a 7 años
-        </label>
-        <label for="v">
-          <input type="checkbox" id="edades" name="edades" value="edad"> 7 a 12 años
-        </label>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="edades" name="edades" value="edad"> 13 a 17años
-        </label>
-        <label for="checkboxfiltros">
-          <input type="checkbox" id="edades" name="edades" value="edad"> +18
-        </label>
-      </form>
-    </div>
-
-  </div> -->
-  <!------------------------------fin filtros ------------------------------------------>
-        
+ 
   <!-- ---------------------------inicio cards--------------------------------------- -->
-              <h1>Nuestros productos</h1>
+            <h1>Tus compras</h1>
   
-                  <main class="card-producto" id="productos-Conteiner"></main> 
-
+                <main class="container-carrito"></main>
+                
+                <div class="vaciar-total">
+                    <button class="boton-vaciar">vaciar carrito</button>
+                    <div class="total-compra">
+                        <button class="boton-venta">Realizar Compra</button>
+                        <li class="realizar-compra item-compra"></li>
+                    </div>
+                </div>
+                <div class="boton-volver">
+                    <button class="boton-volver__boton"><a href="index.html">Volver</a></button>
+                </div>
+                <main class="card-producto" id="productos-Conteiner"></main> 
       <!-- ----------------------------inicio footer------------------------------>
   
             
@@ -132,7 +79,7 @@
           
                       </div>
                 </footer>
-                <script src="./JS/main.js"></script>
+                <script src="./JS/carrito.js"></script>
 <!--fin footer------------------------------>
     </body>
 
