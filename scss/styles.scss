@@ -39,13 +39,21 @@ p{
   font-family: "Rubik", sans-serif;
 }
 
+.carritolink{
+  color: #FCFCFC;
+}
+
 .detalle-compra{
   margin-top: 60px;
   margin-right: 100px;
   padding: 20px;
-  border: #3d3092 solid;
+  border: #EF476F solid;
   border-radius: 10px;
   list-style: none;
+
+  .detalle-cantidad{
+    align-self: center;
+  }
   
   .detalle-compra-item{
     display: flex;
@@ -53,16 +61,27 @@ p{
     
     .detalle-producto{
       
+
       .img-carrito{
         width: 100px;
         height: 100px;
         object-fit: cover;
+        align-self: center;
       }
     }
   }
   .bxs-trash{
     font-size: 40px;
-    color: #ff3967;
+    color: #39ff9c;
+    align-self: center;
+  }
+
+  .detalle-precio{
+    align-self: center;
+  }
+
+  .detalle-total{
+    align-self: center;
   }
 }
 
@@ -284,6 +303,16 @@ p{
       transition: 0.7s;
       overflow: hidden;
 
+      .boton-agregar{
+        padding: 10px 20px;
+        width: 200px;
+        align-self: center;
+        border-radius: 50px;
+        background-color: #EF476F;
+        border-style: none;
+        color: #FCFCFC;
+      }
+
       .botonCarrito {
         width: 200px;
         align-self: center;
@@ -306,6 +335,7 @@ p{
           }
           p{
             font-size: 20px;
+            margin-left: 20px;
           }
       }
     }
@@ -417,18 +447,21 @@ p{
   /* -----------catalogo------------------ */
 
   .vaciar-total{
-    padding-left:40%;
+    justify-self: center;
     display: flex;
-    gap: 80px;
+    gap: 20px;
     grid-area: compra;
-    padding-top: 60px;
-    padding-bottom: 100px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    height: 30px;
 
     .boton-vaciar {
       background-color: #EF476F;
       color: #FCFCFC;
       padding: 0px 20px;
       border-radius: 50px;
+      border-style: none;
+
     }
 
     
@@ -447,19 +480,27 @@ p{
         background-color: #EF476F;
         color: #FCFCFC;
         padding: 0px 20px;
-        border-radius: 50px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
         border-color: #EF476F;
+        border-style: none;
       }
 
     }
 
     .boton-volver{
+      
         display: flex;
       .boton-volver__boton{
         background-color: #EF476F;
         color: #FCFCFC;
         padding: 0px 20px;
         border-radius: 50px;
+        border-style: none;
+        a{
+          color: #FCFCFC;
+          text-decoration: none;
+        }
       }
     }
   }
@@ -470,7 +511,7 @@ p{
     // grid-template-rows: 5% 90% 5%;
     grid-template-areas: 
     "header header"
-    "formulario juegos"
+    "juegos juegos"
     "compra compra"
     "footer footer";
   }
