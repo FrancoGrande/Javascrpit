@@ -83,11 +83,17 @@ document.addEventListener('DOMContentLoaded',() => {
     const popUp = document.querySelector('.card-pop-up');
     const fondo = document.querySelector('.asd1');
 
-    
-    setTimeout(() => {
-        popUp.classList.add('visible');
-        fondo.classList.add('blur');
-    }, 5000);
+    function delay(ms){
+        return new Promise(resolve => setTimeout(resolve, ms));
+    };
+
+    async function mostrarPopUp () {
+            await delay(5000);
+            popUp.classList.add('visible');
+            fondo.classList.add('blur');
+    };
+
+    mostrarPopUp();  
 
     const AceptarGalles= document.querySelector('.galletitas');
     const NoAceptarGalles= document.querySelector('.no-galletitas');
@@ -106,6 +112,8 @@ document.addEventListener('DOMContentLoaded',() => {
     })
 
 })
+
+// fin pop up cookies-------------------------------------------------------------
 
 
 
