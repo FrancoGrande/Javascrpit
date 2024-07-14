@@ -32,6 +32,11 @@
   display: block; /* Mostrar cuando se active */
 }
 
+.blur {
+  filter: blur(50px);
+  transition: filter 0.3s;
+}
+
 .oculto {
   display: none;
 }
@@ -452,11 +457,6 @@ p {
 .catalogo {
   display: grid;
   grid-template-areas: "header header" "juegos juegos" "compra compra" "footer footer";
-}
-
-.blur {
-  filter: blur(50px);
-  transition: filter 0.3s;
 }
 
 .products {

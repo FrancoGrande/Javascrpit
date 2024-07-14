@@ -38,6 +38,10 @@
   }
 }
 
+.blur{
+  filter: blur(50px);
+  transition: filter 0.3s;
+}
 
 .oculto{
   display: none;
@@ -571,10 +575,7 @@ p{
 
   }
 
-  .blur{
-    filter: blur(50px);
-    transition: filter 0.3s;
-  }
+ 
   
   .products{
     grid-area: juegos;
@@ -598,6 +599,8 @@ p{
         gap:5px
       }
   }
+
+
 
   /* ----------------------contacto------------------------------ */
 

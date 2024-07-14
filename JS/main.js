@@ -81,9 +81,9 @@ function agregarCarrito(e){
 
 document.addEventListener('DOMContentLoaded',() => {
     const popUp = document.querySelector('.card-pop-up');
-    const fondo = document.querySelector('asd1');
+    const fondo = document.querySelector('.asd1');
 
-
+    
     setTimeout(() => {
         popUp.classList.add('visible');
         fondo.classList.add('blur');
@@ -94,13 +94,14 @@ document.addEventListener('DOMContentLoaded',() => {
 
     AceptarGalles.addEventListener('click', () =>{
         popUp.classList.remove('visible');
+        fondo.classList.remove('blur');
         alert('te menti no hay galletitas, pero si tenemos altos descuentazos!')
     // ahora vemos que ponemos aca como reaccion
     })
 
     NoAceptarGalles.addEventListener('click', () => {
         popUp.classList.remove('visible');
-
+        fondo.classList.remove('blur');
         alert('Perfecto, no habian galletitas');
     })
 
