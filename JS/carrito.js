@@ -36,14 +36,14 @@ function cargarCarrito(){
         carrito.forEach(element => {
             const div = document.createElement("div");
             div.classList.add("container-carrito");
-            let sumar = (element.precio * element.cantidad);
+            let sumar = (element.price * element.cantidad);
             total +=sumar;
             div.innerHTML = `
             <div class="detalle-compra">
                 <div class="detalle-compra-item">
                     <div class="detalle-producto">
                         <li><small>producto</small></li>
-                        <img class="img-carrito" src="${element.imagen}" alt="">
+                        <img class="img-carrito" src="${element.image}" alt="">
                     
                     </div>
                     <div class="detalle-cantidad">
@@ -52,7 +52,7 @@ function cargarCarrito(){
                     </div>
                     <div class="detalle-precio">
                         <li><small>Precio Unitario</small></li>
-                        <li class="item-compra">${element.precio}</li>
+                        <li class="item-compra">${element.price}</li>
                     </div>
                     <div class="detalle-total">
                         <li><small>Total</small></li>
