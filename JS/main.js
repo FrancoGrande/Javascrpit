@@ -17,7 +17,7 @@ if(productosLocal) {
     carritoProductos=[];
 }
 
-
+//creamos las cards por cada elemento del array y mostramos sus propiedades 
 function mostrarProdcutos(productos) {
     productosLista.innerHTML= "";
     productos.forEach(element => {
@@ -34,7 +34,7 @@ function mostrarProdcutos(productos) {
     botonAgregarAsignado()
 }
 
-
+//asignamos el call al boton de cada card
 function botonAgregarAsignado() {
     botonesAñadir =document.querySelectorAll('.boton-agregar')
     botonesAñadir.forEach(boton => {
@@ -42,11 +42,13 @@ function botonAgregarAsignado() {
     });
 };
 
-fetch(url) //realizo peticion a la api
+
+// hacemos la peticion a la api
+fetch(url) 
     .then( (response) => response.json() )
     .then( (productos) => agregar(productos))
 
-
+// agregamos los elementos al array para luego mostrarlos 
 function agregar(prod){
     prod.forEach(element => {
         arr.push(element);
@@ -54,7 +56,7 @@ function agregar(prod){
     mostrarProdcutos(prod)
 }
 
-
+// agregamos un producto al carrito y actualizamos el numero del carrito en el navbar
 function agregarCarrito(e){
     const idBoton = e.currentTarget.id;
     const productoAgregar= arr.find(producto => producto.id == idBoton);
@@ -79,7 +81,7 @@ function agregarCarrito(e){
 
 // pop up cookies----------------------------------------------------------
 
-document.addEventListener('DOMContentLoaded',() => {
+document.addEventListener('DOMContentLoaded',() => { // Espera a que el contenido este cargado para iniciar el proceso
     const popUp = document.querySelector('.card-pop-up');
     const fondo = document.querySelector('.asd1');
 
@@ -87,7 +89,7 @@ document.addEventListener('DOMContentLoaded',() => {
         return new Promise(resolve => setTimeout(resolve, ms));
     };
 
-    async function mostrarPopUp () {
+    async function mostrarPopUp () { // le damos dilay al pop up  antes de moestrarse 
             await delay(5000);
             popUp.classList.add('visible');
             fondo.classList.add('blur');
@@ -98,6 +100,8 @@ document.addEventListener('DOMContentLoaded',() => {
     const AceptarGalles= document.querySelector('.galletitas');
     const NoAceptarGalles= document.querySelector('.no-galletitas');
 
+
+    // boton aceptar o no aceptar 
     AceptarGalles.addEventListener('click', () =>{
         popUp.classList.remove('visible');
         fondo.classList.remove('blur');
