@@ -3,10 +3,8 @@
 
 
 .card-pop-up{
-
-  
   display: none;
-  position: absolute;
+  position: fixed;
   left: 26%;
   top: 20%;
   display: column;
@@ -17,8 +15,9 @@
   padding: 40px 40px;
   z-index: 1000;
   background-color: #fff;
-
+  
   h1{
+  
     text-align: center;
   }
 
@@ -28,13 +27,13 @@
 
   .botoneses{
     display: flex;
-    flex-direction: row;
     gap: 20px;
-    
+    margin-left: 21%;
   }
 
   .visible {
     display: block; /* Mostrar cuando se active */
+    
   }
 }
 
@@ -345,6 +344,9 @@ p{
     overflow-x: hidden ; 
     padding-top: 40px;
 
+
+
+
     .card2 {
       display: flex;
       flex-direction: column;
@@ -381,14 +383,17 @@ p{
           border-top-left-radius: 17px;
           height: 160px;
           object-fit: cover;
+          overflow:hidden;
         }
 
         h2 {
             font-size: 20px;
             font-weight: 300;
             margin: 20px;
-            width: fit-content;
-            white-space: wrap;
+            max-width: fit-content;
+            white-space: nowrap;
+            text-overflow:ellipsis;
+            overflow:hidden;
           }
           p{
             font-size: 20px;
@@ -545,6 +550,10 @@ p{
 
     }
 
+    .no-scroll{
+      overflow-y: hidden !important;
+    }
+
     .boton-volver{
       
         display: flex;
@@ -563,6 +572,7 @@ p{
   }
 
   .catalogo{
+
     display: grid;
     // grid-template-columns:20% 80% ;
     // grid-template-rows: 5% 90% 5%;
@@ -572,6 +582,11 @@ p{
     "compra compra"
     "footer footer";
 
+    .carrito-container{
+      display: block;
+      justify-self: center;
+      margin-left: 300px;
+    }
 
   }
 

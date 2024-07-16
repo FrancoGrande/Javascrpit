@@ -112,10 +112,14 @@ document.addEventListener('DOMContentLoaded',() => { // Espera a que el contenid
     NoAceptarGalles.addEventListener('click', () => {
         popUp.classList.remove('visible');
         fondo.classList.remove('blur');
-        alert('Perfecto, no habian galletitas');
-    })
+        
+            
+    });
 
-})
+});
+
+
+
 
 // fin pop up cookies-------------------------------------------------------------
 
