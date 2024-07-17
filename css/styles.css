@@ -26,7 +26,6 @@
 .card-pop-up .botoneses {
   display: flex;
   gap: 20px;
-  margin-left: 21%;
 }
 .card-pop-up .visible {
   display: block; /* Mostrar cuando se active */

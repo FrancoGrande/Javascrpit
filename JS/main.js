@@ -105,15 +105,22 @@ document.addEventListener('DOMContentLoaded',() => { // Espera a que el contenid
     AceptarGalles.addEventListener('click', () =>{
         popUp.classList.remove('visible');
         fondo.classList.remove('blur');
-        alert('te menti no hay galletitas, pero si tenemos altos descuentazos!')
-    // ahora vemos que ponemos aca como reaccion
+        Swal.fire({
+            icon: "success",
+            title: "Te mentimos no hay galletitas",
+            text: "Pero tenemos altos descuentazos!",
+          });
     })
 
     NoAceptarGalles.addEventListener('click', () => {
         popUp.classList.remove('visible');
         fondo.classList.remove('blur');
+        Swal.fire({
+            icon: "error",
+            title: "bueno....",
+            text: "Igual no teniamos galletitas.",
+          });
         
-            
     });
 
 });

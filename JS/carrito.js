@@ -25,7 +25,13 @@ function vaciarCarrito(){
 
 botonVenta.addEventListener("click", venta);
 function venta(){
-    window.alert("Gracias por su compra");
+    Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: `Compra exitosa!`,
+        showConfirmButton: false,
+        timer: 1500,
+    });
     vaciarCarrito();
 }
 
@@ -73,7 +79,6 @@ function cargarCarrito(){
         contenedorCarrito.innerHTML = "";
         vaciarTotal.classList.add("noVisible");
         totalCompra.classList.add("noVisible");
-        // carritoVacio.classList.remove("noVisible");
     }
     actualizarBotonesEliminar();//actualizo botones añadidos
 }
