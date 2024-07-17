@@ -1,5 +1,7 @@
 @import "_variables";
 
+
+
 .card-pop-up{
   display: none;
   position: fixed;
@@ -348,9 +350,8 @@ p{
     .card2 {
       display: flex;
       flex-direction: column;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
       width: 300px;
-      height: 350px;
+      height: 400px;
       margin-bottom: 25px;
       border: 2px solid #EF476F;
       border-radius: 20px;
@@ -379,7 +380,7 @@ p{
       .imgclass {
           border-top-right-radius: 17px;
           border-top-left-radius: 17px;
-          height: 160px;
+          height: 210px;
           object-fit: cover;
           overflow:hidden;
         }

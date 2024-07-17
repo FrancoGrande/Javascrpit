@@ -25,12 +25,38 @@ function vaciarCarrito(){
 
 botonVenta.addEventListener("click", venta);
 function venta(){
-    Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: `Compra exitosa!`,
-        showConfirmButton: false,
-        timer: 1500,
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+        title: "Seguro que deseas finalizar la compra?",
+        text: "Si completas la compra mis perritos hoy comen croquetas!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Si, aguanten los perritos",
+        cancelButtonText: "No me importan tus perritos!",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire({
+            title: "Compra exitosa!",
+            text: "Hoy comen croquetas :)",
+            icon: "success"
+        });
+        } else if (
+          /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+        ) {
+        swalWithBootstrapButtons.fire({
+            title: "Pusiste que no!",
+            text: "Mis perritos... :c",
+            icon: "error"
+        });
+        }
     });
     vaciarCarrito();
 }
