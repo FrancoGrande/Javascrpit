@@ -35,7 +35,7 @@ function venta(){
     swalWithBootstrapButtons.fire({
         title: "Seguro que deseas finalizar la compra?",
         text: "Si completas la compra mis perritos hoy comen croquetas!",
-        icon: "warning",
+        icon: "question",
         showCancelButton: true,
         confirmButtonText: "Si, aguanten los perritos",
         cancelButtonText: "No me importan tus perritos!",
