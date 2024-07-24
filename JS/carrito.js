@@ -96,7 +96,8 @@ function cargarCarrito(){
             contenedorCarrito.append(div);
         })
 
-        totalCompra.innerHTML = total;// agrega que los decimales no se extiendan
+        let totalRedondeado = Math.floor(total * 100) / 100;
+        totalCompra.innerHTML = totalRedondeado.toFixed(2);
         
         
     }
