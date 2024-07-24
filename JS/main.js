@@ -93,9 +93,11 @@ document.addEventListener('DOMContentLoaded',() => { // Espera a que el contenid
             await delay(5000);
             popUp.classList.add('visible');
             fondo.classList.add('blur');
+            localStorage.setItem('popUpShown', 'true');
     };
-
-    mostrarPopUp();  
+    if(!localStorage.getItem('popUpShown')){
+        mostrarPopUp();  
+    }
 
     const AceptarGalles= document.querySelector('.galletitas');
     const NoAceptarGalles= document.querySelector('.no-galletitas');
