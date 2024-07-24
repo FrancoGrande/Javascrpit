@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded',() => { // Espera a que el contenid
             icon: "success",
             title: "Te mentimos no hay galletitas",
             text: "Pero tenemos altos descuentazos!",
-          });
+        });
     })
 
     NoAceptarGalles.addEventListener('click', () => {
@@ -119,11 +119,14 @@ document.addEventListener('DOMContentLoaded',() => { // Espera a que el contenid
             icon: "error",
             title: "bueno....",
             text: "Igual no teniamos galletitas.",
-          });
+        });
         
     });
 
 });
+
+
+
 
 
 

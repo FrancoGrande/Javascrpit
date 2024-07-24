@@ -48,7 +48,6 @@ function venta(){
             icon: "success"
         });
         } else if (
-          /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
         ) {
         swalWithBootstrapButtons.fire({
@@ -96,8 +95,8 @@ function cargarCarrito(){
                 `
             contenedorCarrito.append(div);
         })
-    
-        totalCompra.innerHTML = total;
+
+        totalCompra.innerHTML = total;// agrega que los decimales no se extiendan
         
         
     }
