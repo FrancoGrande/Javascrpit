@@ -34,25 +34,25 @@ function venta(){
     });
     swalWithBootstrapButtons.fire({
         title: "Seguro que deseas finalizar la compra?",
-        text: "Si completas la compra mis perritos hoy comen croquetas!",
+        text: "Si aceptas se finalizara la compra.",
         icon: "question",
         showCancelButton: true,
-        confirmButtonText: "Si, aguanten los perritos",
-        cancelButtonText: "No me importan tus perritos!",
+        confirmButtonText: "acepto",
+        cancelButtonText: "no acepto",
         reverseButtons: true
     }).then((result) => {
         if (result.isConfirmed) {
         swalWithBootstrapButtons.fire({
             title: "Compra exitosa!",
-            text: "Hoy comen croquetas :)",
+            text: "yay",
             icon: "success"
         });
         } else if (
         result.dismiss === Swal.DismissReason.cancel
         ) {
         swalWithBootstrapButtons.fire({
-            title: "Pusiste que no!",
-            text: "Mis perritos... :c",
+            title: "volviendo al carrito",
+            text: "aguarde",
             icon: "error"
         });
         }
